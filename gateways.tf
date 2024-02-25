@@ -7,7 +7,7 @@ resource "aws_internet_gateway" "sh_gw" {
 # Elastic IP for NAT gateway
 resource "aws_eip" "sh_eip" {
   depends_on = [aws_internet_gateway.sh_gw]
-  vpc        = true
+  domain = "vpc"
   tags = {
     Name = "sh_EIP_for_NAT"
   }
